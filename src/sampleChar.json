@@ -1,0 +1,110 @@
+{
+    "name": "Hurad",
+    "level": 8,
+    "hitPoints": {
+        "current": 78,
+        "baseLine": 80
+    },
+    "experience": {
+        "current": 15207,
+        "nextLevel": 25000
+    },
+    "stats": {
+        "shift": 4,
+        "discipline": 4,
+        "precision": 4
+    },
+    "weapon": {
+        "name": "Great Axe",
+        "runes": [
+            {
+                "name": "SCR",
+                "effect": ">= 5 dmg"
+            },
+            {
+                "name": "BSR",
+                "effect": "-5 dmg 1x comb weap"
+            }
+        ],
+        "manouvers": [
+            {
+                "name": "Intended Mangle",
+                "diceSet": "2,3",
+                "damage": "2d6+7"
+            },
+            {
+                "name": "Divaicating Stun",
+                "diceSet": "6,4",
+                "damage": "2d6+9"
+            },
+            {
+                "name": "Bladed Billow",
+                "diceSet": "2,6",
+                "damage": "1d6+5"
+            }
+        ]
+    },
+    "armour": [
+        {
+            "name": "Reinforced Banded Metal",
+            "diceSet": "6,4+3,3",
+            "modifier": -4
+        },
+        {
+            "name": "Long Gauntlets",
+            "diceSet": "5,3+3",
+            "modifier": -3
+        },
+        {
+            "name": "Great Helm",
+            "diceSet": "4,3+1",
+            "modifier": -3
+        }
+    ],
+    "scrolls": [
+        {
+            "name": "Scroll of Mental Whip",
+            "orbit": "Psyche",
+            "effect": "10 dmg"
+        },
+        {
+            "name": "Scroll of Flaming Weapon",
+            "orbit": "Primordial",
+            "dispelDoubles": "1",
+            "effect": "+3 dmg for 1 combat"
+        },
+        {
+            "name": "Scroll of Distract",
+            "orbit": "Psyche",
+            "effect": "1 foe leaves combat"
+        }
+    ],
+    "bloodied": 0,
+    "soaked": 0,
+    "favourPoints": [
+        {
+            "god": "Grakada",
+            "points": 2
+        },
+        {
+            "god": "Intuneric",
+            "points": 0
+        },
+        {
+            "god": "Maduva",
+            "points": 1
+        },
+        {
+            "god": "Murataynie",
+            "points": 1
+        },
+        {
+            "god": "Nevazator",
+            "points": 2
+        },
+        {
+            "god": "Radacina",
+            "points": 1
+        }
+    ]
+}
