@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Paper, Stack, Table, TableBody, TableCell, 
     TableContainer, TableHead, TableRow, Typography } from "@mui/material";
-import DamageButton from "./DamageButton";
-import HitButton from "./HitButton";
+import DamageButton from "./Buttons/DamageButton";
+import HitButton from "./Buttons/HitButton";
 
 export default function StatsPanel({ character }) {
 
@@ -35,8 +35,16 @@ export default function StatsPanel({ character }) {
                             <TableBody>
                                 {character.weapon.manouvers.map((manouver) => (
                                     <TableRow key={manouver.name}>
-                                        <TableCell>{manouver.name}</TableCell>
-                                        <TableCell>{manouver.diceSet}</TableCell>
+                                        <TableCell>
+                                            <Typography>
+                                                {manouver.name}
+                                            </Typography>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Typography>
+                                                {manouver.diceSet}
+                                            </Typography>
+                                        </TableCell>
                                         <TableCell>
                                             <DamageButton
                                                 manouverName={manouver.name}

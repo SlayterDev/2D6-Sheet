@@ -1,6 +1,6 @@
 import React from "react";
 import { Popover, Typography, Button } from "@mui/material";
-import { hitRoll } from "../utils/diceroll";
+import { hitRoll } from "../../utils/diceroll";
 
 export default function HitButton() {
     const [anchorEl, setAnchorEl] = React.useState(null);

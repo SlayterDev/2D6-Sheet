@@ -70,7 +70,7 @@
         {
             "name": "Scroll of Flaming Weapon",
             "orbit": "Primordial",
-            "dispelDoubles": "1",
+            "dispelDoubles": "1,1",
             "effect": "+3 dmg for 1 combat"
         },
         {

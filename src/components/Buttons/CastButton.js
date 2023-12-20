@@ -1,13 +1,13 @@
 import React from "react";
 import { Popover, Typography, Button } from "@mui/material";
-import { damageRoll } from "../utils/diceroll";
+import { hitRoll } from "../../utils/diceroll";
 
-export default function DamageButton({ manouverName, damage }) {
+export default function CastButton({ dispelDoubles }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const [damageRollResult, setDamageRoll] = React.useState(null);
+    const [hitRollResult, setHitRoll] = React.useState(null);
 
     const handleClick = (event) => {
-        rollDamage(damage);
+        rollHit();
         setAnchorEl(event.currentTarget);
     };
 
@@ -15,12 +15,22 @@ export default function DamageButton({ manouverName, damage }) {
         setAnchorEl(null);
     };
     
-    function rollDamage(diceSet) {
-       setDamageRoll(damageRoll(diceSet));
+    function rollHit() {
+        const hit = hitRoll();
+        let hitString = `${hit[0]}, ${hit[1]}`;
+
+        if (dispelDoubles) {
+            const dispelVal = parseInt(dispelDoubles.split(',')[0]);
+            if (hit[0] === hit[1] && hit[0] === dispelVal) {
+                hitString += " - Dispelled!";
+            }
+        }
+
+        setHitRoll(hitString);
     }
 
     const open = Boolean(anchorEl);
-    const id = open ? manouverName + '-dmg' : undefined;
+    const id = open ? 'cast-roll' : undefined;
 
     return (
         <div>
@@ -29,7 +39,7 @@ export default function DamageButton({ manouverName, damage }) {
                 onClick={handleClick}
                 aria-describedby={id}
             >
-                {damage}
+                Cast
             </Button>
             <Popover
                 id={id}
@@ -45,7 +55,7 @@ export default function DamageButton({ manouverName, damage }) {
                     horizontal: 'left',
                 }}
             >
-                <Typography sx={{ p: 2 }}>{damageRollResult} damage</Typography>
+                <Typography sx={{ p: 2 }}>{hitRollResult}</Typography>
             </Popover>
         </div>
     )
